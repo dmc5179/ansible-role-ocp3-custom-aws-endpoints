@@ -1,0 +1,11 @@
+[global]
+
+Zone = {{ aws_region }}{{ aws_zone }}
+
+[ServiceOverride "s3"]
+Service=s3
+URL={{ s3_endpoint }}
+                 
+[ServiceOverride "ec2"]
+Service=ec2
+URL={{ ec2_endpoint }}

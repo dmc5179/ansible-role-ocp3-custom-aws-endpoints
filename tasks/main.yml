@@ -1,2 +1,17 @@
 ---
 # tasks file for ansible-role-ocp3-custom-aws-endpoints
+
+- name: Ensure AWS config directory is present
+  become: true
+  file:
+    path: "/etc/aws"
+    state: directory
+    mode: '0755'
+
+- name: Copy template aws.conf
+  become: true
+  template:
+    src: aws.conf.j2
+    dest: "/etc/aws/aws.conf"
+    mode: 0664
+

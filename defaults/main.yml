@@ -1,2 +1,7 @@
 ---
 # defaults file for ansible-role-ocp3-custom-aws-endpoints
+
+aws_region: 'us-east-1'
+aws_zone: 'c'
+ec2_endpoint: 'https://ec2.{{ aws_region }}.amazonaws.com'
+s3_endpoint: 'https://s3.{{ aws_region }}.amazonaws.com'
